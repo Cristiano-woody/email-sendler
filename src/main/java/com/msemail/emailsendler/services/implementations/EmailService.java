@@ -27,7 +27,7 @@ public class EmailService implements IEmailService {
             message.setText(emailModel.getText());
             message.setFrom(emailModel.getEmailFrom());
             message.setTo(emailModel.getEmailTo());
-            //mailSender.send(message);
+            mailSender.send(message);
 
             emailModel.setStatusEmail(StatusEmail.SENT);
         } catch (MailException exception) {
