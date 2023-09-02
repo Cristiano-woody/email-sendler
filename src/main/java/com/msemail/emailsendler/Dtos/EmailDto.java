@@ -3,6 +3,7 @@ package com.msemail.emailsendler.Dtos;
 import jakarta.persistence.Column;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 import java.util.UUID;
@@ -10,8 +11,8 @@ import java.util.UUID;
 @Data
 public class EmailDto {
 
-        @NotBlank
-        private String ownerRef;
+        @NotNull
+        private UUID ownerRef;
         @NotBlank
         @Email
         private String emailFrom;
