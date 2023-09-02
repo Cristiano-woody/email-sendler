@@ -24,9 +24,9 @@ public class EmailController {
             BeanUtils.copyProperties(emailDto, email);
             this.emailService.execute(email);
 
-            return ResponseEntity.status(HttpStatus.CREATED).body("");
+            return ResponseEntity.status(HttpStatus.OK).body("Email enviado.");
         } catch ( Error error) {
-            ResponseEntity.status(HttpStatus.BAD_REQUEST).body("");
+            ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
         }
         return null;
     }
